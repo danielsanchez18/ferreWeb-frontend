@@ -1,0 +1,151 @@
+<section class="bg-primary" style="font-family: Plus Jakarta Sans;">
+  <nav class="mx-auto w-full max-w-[80rem] flex items-center justify-between py-2">
+
+    <!-- Logo -->
+    <a routerLink="inicio" class="max-w-32">
+      <img src="img/logo.svg" alt="">
+    </a>
+
+    <!-- Menu de secciones -->
+    <div class="flex items-center h-full w-fit gap-x-10">
+      <a routerLink="inicio" routerLinkActive="active"
+        class="flex flex-col items-center justify-center text-sm font-semibold text-white capitalize gap-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-house size-4">
+          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+          <path
+            d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        </svg>
+        Inicio
+      </a>
+
+      <a routerLink="delivery" routerLinkActive="active"
+        class="flex flex-col items-center justify-center text-sm font-semibold text-white capitalize gap-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-truck size-4">
+          <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+          <path d="M15 18H9" />
+          <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+          <circle cx="17" cy="18" r="2" />
+          <circle cx="7" cy="18" r="2" />
+        </svg>
+        delivery
+      </a>
+
+      <a routerLink="ubicacion" routerLink="active"
+        class="flex flex-col items-center justify-center text-sm font-semibold text-white capitalize gap-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-map-pin size-4">
+          <path
+            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        ubicación
+      </a>
+
+    </div>
+
+    <!-- Botones de carrito y login  -->
+    <div class="flex items-center gap-x-7">
+      <a routerLink="buscar"
+        class="flex flex-col items-center justify-center text-xs font-semibold text-white capitalize gap-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-search size-5">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+        <!-- Buscar -->
+      </a>
+
+      <a routerLink="carrito"
+        class="flex flex-col items-center justify-center text-xs font-semibold text-white capitalize gap-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-shopping-cart size-5">
+          <circle cx="8" cy="21" r="1" />
+          <circle cx="19" cy="21" r="1" />
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+        </svg>
+        <!-- Carrito -->
+      </a>
+
+      <!-- <a routerLink="ingresar"
+        class="flex flex-col items-center justify-center text-xs font-semibold text-white capitalize gap-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-user-round size-4">
+          <circle cx="12" cy="8" r="5" />
+          <path d="M20 21a8 8 0 0 0-16 0" />
+        </svg>
+        Ingresar
+      </a> -->
+
+      <div class="relative inline-flex hs-dropdown">
+        <button id="hs-dropdown-default" type="button"
+          class="flex items-center px-4 py-1 border-l-2 hs-dropdown-toggle gap-x-3 border-l-secondary"
+          aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+
+          <div class="bg-white rounded-full size-7"></div>
+          <span class="text-xs font-semibold text-white">Juan Perez Carrasco </span>
+
+          <svg class="text-white hs-dropdown-open:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+
+        <div
+          class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-1 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
+          role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-default">
+          <div class="p-1 space-y-0.5">
+            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-xs text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+              routerLink="/pedidos">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-gray-800 lucide lucide-history size-5">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+                <path d="M12 7v5l4 2" />
+              </svg>
+              <p class="font-semibold">
+                Historial de compras
+              </p>
+            </a>
+            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-xs text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+              routerLink="/perfil">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-gray-800 lucide lucide-user-round size-5">
+                <circle cx="12" cy="8" r="5" />
+                <path d="M20 21a8 8 0 0 0-16 0" />
+              </svg>
+              <p class="font-semibold">
+                Perfil
+              </p>
+            </a>
+            <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-xs text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+              routerLink="/perfil">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-gray-800 lucide lucide-log-out size-5">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" x2="9" y1="12" y2="12" />
+              </svg>
+              <p class="font-semibold">
+                Cerrar sesión
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </nav>
+</section>

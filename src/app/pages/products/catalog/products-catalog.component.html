@@ -1,0 +1,187 @@
+<section class="grid grid-cols-[auto_1fr] py-10 gap-x-10">
+
+  <article class="space-y-8">
+
+    <section class="space-y-3">
+
+      <h1 class="text-sm font-bold text-gray-500 uppercase ">Categorías</h1>
+
+      <hr class="border-2 border-gray-300 w-14">
+
+      <div class="flex flex-col text-sm w-60">
+        <button
+          (click)="selectCategory('Todos')"
+          class="px-6 py-2 capitalize text-start rounded-xl hover:bg-gray-100"
+          [ngClass]="{ 'bg-gray-200 font-semibold pointer-events-none': 'Todos' === selectedCategory }"
+          >
+          Todos
+        </button>
+        <button
+          *ngFor="let category of categories"
+          (click)="selectCategory(category)"
+          class="px-6 py-2 capitalize text-start rounded-xl hover:bg-gray-100"
+          [ngClass]="{ 'bg-gray-200 font-semibold pointer-events-none': category === selectedCategory }"
+        >
+        {{ category }}</button>
+
+      </div>
+    </section>
+
+
+    <section class="space-y-3">
+      <h1 class="text-sm font-bold text-gray-500 uppercase">buscar</h1>
+
+      <hr class="border-2 border-gray-300 w-14">
+
+      <div class="relative flex items-center max-w-60">
+        <input type="text" placeholder="Buscar"
+          [(ngModel)]="searchQuery"
+          (input)="searchProducts()"
+          class="max-w-full px-4 py-2 text-sm border border-gray-300 shadow-inner pr-11">
+
+        <button (click)="searchProducts()" class="absolute right-0 p-2 text-white bg-orange-500 border border-orange-500">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-search size-5">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      </div>
+
+    </section>
+
+
+    <section class="space-y-3">
+      <h1 class="text-sm font-bold text-gray-500 uppercase">FILTRAR POR PRECIO</h1>
+
+      <hr class="border-2 border-gray-300 w-14">
+
+      <div class="py-2">
+
+      <input type="range" class="w-full bg-transparent cursor-pointer appearance-none disabled:opacity-50 disabled:pointer-events-none focus:outline-none
+        [&::-webkit-slider-thumb]:w-2.5
+        [&::-webkit-slider-thumb]:h-2.5
+        [&::-webkit-slider-thumb]:-mt-0.5
+        [&::-webkit-slider-thumb]:appearance-none
+        [&::-webkit-slider-thumb]:bg-gray-500
+        [&::-webkit-slider-thumb]:shadow-[0_0_0_4px_rgba(107,114,128,1)]
+        [&::-webkit-slider-thumb]:rounded-full
+        [&::-webkit-slider-thumb]:transition-all
+        [&::-webkit-slider-thumb]:duration-150
+        [&::-webkit-slider-thumb]:ease-in-out
+        [&::-webkit-slider-thumb]:
+
+        [&::-moz-range-thumb]:w-2.5
+        [&::-moz-range-thumb]:h-2.5
+        [&::-moz-range-thumb]:appearance-none
+        [&::-moz-range-thumb]:bg-white
+        [&::-moz-range-thumb]:border-4
+        [&::-moz-range-thumb]:border-gray-500
+        [&::-moz-range-thumb]:rounded-full
+        [&::-moz-range-thumb]:transition-all
+        [&::-moz-range-thumb]:duration-150
+        [&::-moz-range-thumb]:ease-in-out
+        [&::-moz-range-thumb]:
+
+        [&::-webkit-slider-runnable-track]:w-full
+        [&::-webkit-slider-runnable-track]:h-2
+        [&::-webkit-slider-runnable-track]:bg-gray-400
+        [&::-webkit-slider-runnable-track]:rounded-full
+        [&::-webkit-slider-runnable-track]:
+
+        [&::-moz-range-track]:w-full
+        [&::-moz-range-track]:h-2
+        [&::-moz-range-track]:bg-gray-500
+        [&::-moz-range-track]:rounded-full" id="basic-range-slider-usage" aria-orientation="horizontal">
+
+      </div>
+
+      <section class="flex items-center justify-between gap-x-2">
+        <button
+          class="px-4 py-2 text-xs font-bold text-white uppercase bg-gray-700 rounded-full hover:bg-gray-800">filtrar</button>
+
+        <div class="flex items-center text-xs gap-x-1">
+          <p class="text-gray-600">Precio:</p>
+          <p class="font-semibold">S/.0 - </p>
+          <p class="font-semibold">S/.5000</p>
+        </div>
+      </section>
+    </section>
+
+
+  </article>
+
+  <article class="space-y-5">
+
+    <!-- <h1 class="text-xl font-semibold capitalize">{{ selectedCategory }}</h1> -->
+
+    <h1 class="text-xl font-semibold capitalize">
+      {{ selectedCategory }}
+      <span *ngIf="searchQuery">: "{{ searchQuery }}"</span>
+    </h1>
+
+    <!-- Products  -->
+    <div class="grid grid-cols-3 gap-y-5 gap-x-10">
+
+      <a *ngFor="let product of paginatedProducts" routerLink="/producto/1"
+        class="flex flex-col p-4 pb-2 border group rounded-xl hover:shadow-lg">
+        <div class="flex items-center justify-center h-full min-h-52 max-h-52">
+          <img
+            [src]="product.image"
+            alt="{{ product.title }}"
+            class="object-cover h-full max-h-full transition-transform duration-200 ease-in-out group-hover:scale-105 group-focus:scale-105"
+          >
+        </div>
+        <div class="py-2 space-y-2 border-t">
+          <div>
+            <h2 class="text-sm font-semibold truncate">{{ product.title }}</h2>
+            <p class="text-xs font-medium text-gray-500">Marca del producto</p>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold">S/ {{ product.price }}</span>
+
+            <div class="flex items-center gap-x-4">
+              <!-- Button Like -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-thumbs-up size-4">
+                  <path d="M7 10v12" />
+                  <path
+                    d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
+                </svg>
+              </button>
+
+              <!-- Button Add to Cart -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart size-4">
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Pagination -->
+    <nav class="flex items-center py-5 justify-self-center" aria-label="Pagination">
+      <button
+      *ngFor="let page of pages"
+      (click)="goToPage(page)"
+      class="px-4 py-2 text-sm rounded-md hover:bg-gray-200"
+      [ngClass]="{ 'bg-primary-light text-white font-semibold pointer-events-none': page === currentPage }"
+    >
+      {{ page }}
+    </button>
+    </nav>
+
+  </article>
+
+</section>

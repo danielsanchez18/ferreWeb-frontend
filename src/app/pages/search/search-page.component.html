@@ -1,0 +1,188 @@
+<section class="py-10 space-y-10">
+
+  <h1 class="text-xl font-semibold text-center">Buscar Producto</h1>
+
+  <div class="flex items-center gap-x-5 max-w-[30rem] mx-auto">
+    <input type="text" class="w-full px-5 py-3 text-sm border rounded-xl focus:outline-primary"
+      placeholder="Ingrese el nombre del producto">
+    <button
+      class="px-4 py-3 text-xs font-semibold text-white rounded-xl bg-primary hover:bg-primary-light">Buscar</button>
+  </div>
+
+  <div class="space-y-5">
+    <h1 class="font-semibold uppercase">Busquedas recientes</h1>
+
+    <div class="grid grid-cols-4 gap-10">
+
+      <a routerLink="/producto/1" class="flex flex-col p-4 pb-2 border group rounded-xl hover:shadow-lg">
+        <div class="flex items-center justify-center h-full min-h-52 max-h-52">
+          <img
+            class="object-cover w-full max-h-full transition-transform duration-200 ease-in-out group-hover:scale-105 group-focus:scale-105"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaCcIhyHOzRdqkKI2gtLi0R4Q27OWNJMEbMg&s" alt="">
+        </div>
+        <div class="py-2 space-y-2 border-t">
+          <div>
+            <h2 class="text-sm font-semibold truncate">STAYER Taladro Reversible 3/8 pulg</h2>
+            <p class="text-xs font-medium text-gray-500">EDIPESA</p>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold">S/ 100.00</span>
+
+            <div class="flex items-center gap-x-4">
+              <!-- Button Like -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-thumbs-up size-4">
+                  <path d="M7 10v12" />
+                  <path
+                    d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
+                </svg>
+              </button>
+
+              <!-- Button Add to Cart -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart size-4">
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/producto/1" class="flex flex-col p-4 pb-2 border group rounded-xl hover:shadow-lg">
+        <div class="flex items-center justify-center h-full min-h-52">
+          <img
+            class="object-cover w-full max-h-full transition-transform duration-200 ease-in-out group-hover:scale-105 group-focus:scale-105"
+            src="https://i0.wp.com/grupocasalima.com/wp-content/uploads/2022/06/venta-de-martillo-51274-casa-lima.webp?fit=900%2C900&ssl=1"
+            alt="">
+        </div>
+        <div class="py-2 space-y-2 border-t">
+          <div>
+            <h2 class="text-sm font-semibold truncate">Martillo de Uña 29MM - 51274</h2>
+            <p class="text-xs font-medium text-gray-500">STANLEY</p>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold">S/ 30.00</span>
+
+            <div class="flex items-center gap-x-4">
+              <!-- Button Like -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-thumbs-up size-4">
+                  <path d="M7 10v12" />
+                  <path
+                    d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
+                </svg>
+              </button>
+
+              <!-- Button Add to Cart -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart size-4">
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/producto/1" class="flex flex-col p-4 pb-2 border group rounded-xl hover:shadow-lg">
+        <div class="flex items-center justify-center h-full min-h-52 max-h-52">
+          <img
+            class="object-cover w-full max-h-full transition-transform duration-200 ease-in-out group-hover:scale-105 group-focus:scale-105"
+            src="https://http2.mlstatic.com/D_NQ_NP_773134-MLM49121749266_022022-O.webp" alt="">
+        </div>
+        <div class="py-2 space-y-2 border-t">
+          <div>
+            <h2 class="text-sm font-semibold truncate">Linterna Recargable Usb Led 120 Lúmenes Pretul Lire-120p</h2>
+            <p class="text-xs font-medium text-gray-500">PRETUL</p>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold">S/ 27.92</span>
+
+            <div class="flex items-center gap-x-4">
+              <!-- Button Like -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-thumbs-up size-4">
+                  <path d="M7 10v12" />
+                  <path
+                    d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
+                </svg>
+              </button>
+
+              <!-- Button Add to Cart -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart size-4">
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a routerLink="/producto/1" class="flex flex-col p-4 pb-2 border group rounded-xl hover:shadow-lg">
+        <div class="flex items-center justify-center h-full min-h-52 max-h-52">
+          <img
+            class="object-cover w-full max-h-full transition-transform duration-200 ease-in-out group-hover:scale-105 group-focus:scale-105"
+            src="https://cfrouting.zoeysite.com/cdn-cgi/image/format=auto,fit=scale-down,quality=70/https://s3.amazonaws.com/zcom-media/sites/a0i0h00000QJocmAAD/media/catalog/product/a/r/arquivos-ids-156789-30-615.jpg"
+            alt="">
+        </div>
+        <div class="py-2 space-y-2 border-t">
+          <div>
+            <h2 class="text-sm font-semibold truncate">CINTA METRICA GLOBAL PLUS DE 5 METROS 30-615</h2>
+            <p class="text-xs font-medium text-gray-500">STANLEY</p>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold">S/ 17.00</span>
+
+            <div class="flex items-center gap-x-4">
+              <!-- Button Like -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-thumbs-up size-4">
+                  <path d="M7 10v12" />
+                  <path
+                    d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z" />
+                </svg>
+              </button>
+
+              <!-- Button Add to Cart -->
+              <button class="text-gray-600 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shopping-cart size-4">
+                  <circle cx="8" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

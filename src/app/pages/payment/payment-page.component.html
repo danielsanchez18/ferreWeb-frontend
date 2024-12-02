@@ -1,0 +1,363 @@
+<section class="py-10 space-y-10">
+
+  <h1 class="text-xl font-semibold text-center">Detalles de Compra</h1>
+
+  <div class="max-w-[50rem] mx-auto">
+    <!-- Stepper -->
+    <div data-hs-stepper="">
+      <!-- Stepper Nav -->
+      <ul class="relative flex flex-row gap-x-2">
+        <li class="flex items-center flex-1 gap-x-2 shrink basis-0 group" data-hs-stepper-nav-item='{
+      "index": 1
+    }'>
+          <span class="inline-flex items-center text-xs align-middle min-w-7 min-h-7 group">
+            <span
+              class="flex items-center justify-center font-medium text-gray-800 bg-gray-100 rounded-full size-7 shrink-0 group-focus:bg-gray-200 hs-stepper-active:bg-primary-light hs-stepper-active:text-white hs-stepper-success:bg-primary-light hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
+              <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">1</span>
+              <svg class="hidden shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="text-sm font-medium text-gray-800 ms-2">
+              Dirección de Envío
+            </span>
+          </span>
+          <div
+            class="flex-1 w-full h-px bg-gray-200 group-last:hidden hs-stepper-success:bg-primary-light hs-stepper-completed:bg-teal-600">
+          </div>
+        </li>
+
+        <li class="flex items-center flex-1 gap-x-2 shrink basis-0 group" data-hs-stepper-nav-item='{
+      "index": 2
+    }'>
+          <span class="inline-flex items-center text-xs align-middle min-w-7 min-h-7 group">
+            <span
+              class="flex items-center justify-center font-medium text-gray-800 bg-gray-100 rounded-full size-7 shrink-0 group-focus:bg-gray-200 hs-stepper-active:bg-primary-light hs-stepper-active:text-white hs-stepper-success:bg-primary-light hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
+              <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
+              <svg class="hidden shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="text-sm font-medium text-gray-800 ms-2">
+              Método de Pago
+            </span>
+          </span>
+          <div
+            class="flex-1 w-full h-px bg-gray-200 group-last:hidden hs-stepper-success:bg-primary hs-stepper-completed:bg-teal-600">
+          </div>
+        </li>
+        <!-- End Item -->
+      </ul>
+      <!-- End Stepper Nav -->
+
+      <!-- Stepper Content -->
+      <div class="mt-5 sm:mt-8">
+        <!-- First Content -->
+        <div data-hs-stepper-content-item='{
+          "index": 1
+        }'>
+          <div class="space-y-5 h-96">
+            <form [formGroup]="formDelivery" class="flex items-center gap-x-5">
+
+              <button type="button" (click)="captureValue('delivery')" class="w-full px-5 py-3 border rounded-xl"
+                [ngClass]="{'border-primary border-2': selectedOption === 'delivery'}">
+                <div class="flex gap-x-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-package">
+                    <path
+                      d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" />
+                    <path d="M12 22V12" />
+                    <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7" />
+                    <path d="m7.5 4.27 9 5.15" />
+                  </svg>
+                  <div class="text-sm font-semibold text-start">
+                    <p>Entrega a Domicilio</p>
+                    <p class="text-xs text-gray-500">S/. 15.00</p>
+                  </div>
+                </div>
+              </button>
+
+              <button ytpe="button" (click)="captureValue('pickup')" class="w-full px-5 py-3 border rounded-xl"
+                [ngClass]="{'border-primary border-2': selectedOption === 'pickup'}">
+                <div class="flex gap-x-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-store">
+                    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+                    <path d="M2 7h20" />
+                    <path
+                      d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7" />
+                  </svg>
+                  <div class="text-sm font-semibold text-start">
+                    <p>Recojo en Tienda</p>
+                    <p class="text-xs text-gray-500">Entrega sin costo</p>
+                  </div>
+                </div>
+              </button>
+            </form>
+
+            <section class="flex py-5 gap-x-5">
+              <div class="w-full space-y-3 text-xs">
+                <p class="font-semibold">Detalles del Usuario</p>
+                <a routerLink=""
+                  class="flex items-center px-4 py-3 font-medium border gap-x-4 hover:bg-gray-100 hover:border-gray-100 rounded-xl">
+                  <div class="bg-gray-300 rounded-full size-5"></div>
+                  Nombre Completo del Usuario
+                </a>
+
+                <p class="font-semibold">Teléfono</p>
+                <input type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl"
+                  placeholder="Ingrese su número de teléfono">
+
+                <p class="font-semibold">Comentarios (Opcional)</p>
+                <textarea type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl"
+                  placeholder="Ingrese comentarios"></textarea>
+              </div>
+
+              <div class="w-full space-y-3 text-xs">
+
+                @if( selectedOption === 'delivery' ) {
+                <p class="font-semibold">Dirección</p>
+                <input type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl"
+                  placeholder="Ingrese su dirección">
+
+                <p class="font-semibold">Departamento</p>
+                <select type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl"
+                  placeholder="Ingrese su departamento">
+                  <option value="">Lambayeque</option>
+                  <option value="">Lima</option>
+                  <option value="">Tumbes</option>
+                  <option value="">Piura</option>
+                </select>
+
+                <p class="font-semibold">Provincia</p>
+                <select type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl"
+                  placeholder="Ingrese su provincia">
+                  <option value="">Chiclayo</option>
+                  <option value="">Monsefú</option>
+                  <option value="">Reque</option>
+                  <option value="">Eten</option>
+                </select>
+                }
+
+                @if ( selectedOption === 'pickup' ) {
+                <p class="font-semibold">Dirección de la tienda</p>
+
+                <a routerLink=""
+                  class="flex items-center px-4 py-3 font-medium border gap-x-3 hover:bg-gray-100 hover:border-gray-100 rounded-xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-map-pin size-5">
+                    <path
+                      d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  Ubicación de la Tienda
+                </a>
+                }
+
+              </div>
+
+            </section>
+          </div>
+        </div>
+        <!-- End First Content -->
+
+        <!-- First Content -->
+        <div data-hs-stepper-content-item='{
+          "index": 2
+          }' style="display: none;">
+          <div class="space-y-5 h-96">
+            <form [formGroup]="formPaymethod" class="flex items-center gap-x-5">
+
+              <button type="button" (click)="captureValue('yape')"
+                class="flex items-center w-full px-5 py-3 border gap-x-5 rounded-xl"
+                [ngClass]="{'border-primary border-2': selectedMethod === 'yape'}">
+                <div class="rounded-md size-9">
+                  <img class="object-cover rounded-md size-9"
+                    src="https://seeklogo.com/images/Y/yape-logo-3E473EE7E5-seeklogo.com.png" alt="">
+                </div>
+                <div class="rounded-md size-9">
+                  <img class="object-cover rounded-md size-9"
+                    src="https://images.seeklogo.com/logo-png/38/1/plin-logo-png_seeklogo-386806.png?v=638660522030000000"
+                    alt="">
+                </div>
+                <div class="text-sm font-semibold">Yape / Plin</div>
+              </button>
+
+              <button type="button" (click)="captureValue('tarjeta')" class="w-full px-5 py-3 border rounded-xl"
+                [ngClass]="{'border-primary border-2': selectedMethod === 'tarjeta'}">
+                <div class="flex gap-x-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-credit-card">
+                    <rect width="20" height="14" x="2" y="5" rx="2" />
+                    <line x1="2" x2="22" y1="10" y2="10" />
+                  </svg>
+                  <div class="text-sm font-semibold text-start">
+                    <p>Tarjeta</p>
+                    <p class="text-xs text-gray-500">Aceptamos todo tipo de tarjetas</p>
+                  </div>
+                </div>
+              </button>
+            </form>
+
+            @if(selectedMethod === 'yape') {
+            <div class="w-full py-5 space-y-3 text-sm max-w-[50rem] mx-auto flex items-center gap-x-5">
+
+              <section class="flex flex-col items-center justify-center w-full space-y-5">
+                <div class="flex items-center gap-x-2">
+                  <p class="font-semibold">Número de Celular: </p>
+                  <p class="font-medium">936245721</p>
+                </div>
+
+                <div class="size-40">
+                  <img class="object-cover size-40"
+                    src="https://png.pngtree.com/png-clipart/20230822/original/pngtree-sample-qr-code-ready-to-scan-with-smart-phone-picture-image_8170755.png"
+                    alt="">
+                </div>
+              </section>
+
+              <section class="w-full ">
+                <div data-hs-file-upload='{
+                    "url": "/upload",
+                    "acceptedFiles": "image/*",
+                    "maxFiles": 1,
+                    "singleton": true
+                  }'>
+                  <template data-hs-file-upload-preview="">
+                    <div class="size-40">
+                      <img class="object-contain w-full rounded-md" data-dz-thumbnail="">
+                    </div>
+                  </template>
+
+                  <div class="flex flex-col items-center gap-3 sm:gap-5">
+                    <div class="group" data-hs-file-upload-previews="" data-hs-file-upload-pseudo-trigger="">
+                      <span
+                        class="group-has-[div]:hidden gap-y-2 flex flex-col shrink-0 justify-center items-center size-40 border-2 border-dotted border-gray-300 text-gray-400 cursor-pointer rounded-md hover:bg-gray-50">
+                        <!-- <svg class="shrink-0 size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <circle cx="12" cy="10" r="3"></circle>
+                          <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+                        </svg> -->
+                        <p class="px-4 text-xs font-medium text-center">
+                          Sube una captura del pago
+                        </p>
+                      </span>
+                    </div>
+
+                    <div class="grow">
+                      <div class="flex items-center gap-x-2">
+                        <button type="button"
+                          class="inline-flex items-center px-3 py-2 text-xs font-medium text-white border border-transparent rounded-lg bg-primary gap-x-2 hover:bg-primary-light focus:outline-none focus:bg-primary-light disabled:opacity-50 disabled:pointer-events-none"
+                          data-hs-file-upload-trigger="">
+                          <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" x2="12" y1="3" y2="15"></line>
+                          </svg>
+                          Subir foto
+                        </button>
+                        <button type="button"
+                          class="inline-flex items-center px-3 py-2 text-xs font-semibold text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                          data-hs-file-upload-clear="">Borrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            }
+
+            @if (selectedMethod === 'tarjeta') {
+            <div class="w-full py-5 space-y-3 text-xs max-w-[25rem] mx-auto">
+              <p class="font-semibold">Nombre del titular</p>
+              <input type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl" placeholder="Ingrese su nombre">
+
+              <p class="font-semibold">Número de la tarjeta</p>
+              <input type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl"
+                placeholder="Ingrese su número de tarjeta">
+
+              <div class="flex items-center gap-x-5">
+                <div class="w-full space-y-3">
+                  <p class="font-semibold">Fecha de Vencimiento</p>
+                  <input type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl" placeholder="MM/YY">
+                </div>
+                <div class="w-full space-y-3">
+                  <p class="font-semibold">Código de Seguridad</p>
+                  <input type="text" class="w-full px-4 py-2.5 text-xs border rounded-xl" placeholder="CCV">
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        <!-- End First Content -->
+
+        <!-- Final Content -->
+        <div data-hs-stepper-content-item='{
+          "isFinal": true
+          }' style="display: none;">
+          <div class="flex flex-col items-center justify-center space-y-2 h-96">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-circle-check-big text-primary-light">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>
+            <p class="text-sm font-medium">Pedido realizado exitosamente.</p>
+          </div>
+        </div>
+        <!-- End Final Content -->
+
+        <!-- Button Group -->
+        <div class="flex items-center justify-between mt-5 gap-x-2">
+          <button type="button"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-1 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+            data-hs-stepper-back-btn="">
+            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+            Atrás
+          </button>
+          <button type="button"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-white border border-transparent rounded-lg bg-primary gap-x-1 hover:bg-primary-light focus:outline-none focus:bg-primary-light disabled:opacity-50 disabled:pointer-events-none"
+            data-hs-stepper-next-btn="">
+            Siguiente
+            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+          <button type="button"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-white border border-transparent rounded-lg bg-primary gap-x-1 hover:bg-primary-light focus:outline-none focus:bg-primary-light disabled:opacity-50 disabled:pointer-events-none"
+            data-hs-stepper-finish-btn="" style="display: none;">
+            Comprar
+          </button>
+          <a routerLink="/pedido/1"
+            class="inline-flex items-center px-3 py-2 mx-auto text-sm font-medium text-white border border-transparent rounded-lg bg-primary gap-x-1 hover:bg-primary-light focus:outline-none focus:bg-primary-light disabled:opacity-50 disabled:pointer-events-none"
+            data-hs-stepper-reset-btn="" style="display: none;">
+            Ver Pedido
+          </a>
+        </div>
+        <!-- End Button Group -->
+      </div>
+      <!-- End Stepper Content -->
+    </div>
+    <!-- End Stepper -->
+  </div>
+
+</section>
